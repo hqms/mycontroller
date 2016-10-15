@@ -1,0 +1,19 @@
+{
+  "timezone" : "+0700",
+  "timezoneMilliseconds" : 25200000,
+  "timezoneString" : "WIB",
+  "appVersion" : "0.0.3.Alpha2",
+  "systemDate" : 1476543684623,
+  "appName" : "MyController.org",
+  "languageId" : "en_us",
+  "language" : "English (US)",
+  "dateFormat" : "MMM dd, yyyy hh:mm:ss a",
+  "dateFormatWithoutSeconds" : "MMM dd, yyyy hh:mm a",
+  "timeFormat" : "hh:mm:ss a",
+  "timeFormatWithoutSeconds" : "hh:mm a",
+  "timeFormatSet" : "12 hours",
+  "loginMessage" : "Default username: <b>admin</b>, password: <b>admin<b>",
+  "globalPageRefreshTime" : 30000,
+  "dashboardLimit" : 5,
+  "tableRowsLimit" : 10
+}
