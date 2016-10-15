@@ -15,49 +15,73 @@
     limitations under the License.
 
 -->
-    <span id="badge">
-      <!-- Should update this logo <img src="images/mc_logo_.gif" alt="MyController.org logo" /> -->
-    </span>
-    <div class="container" >
-      <div class="row">
-        <div class="col-sm-12">
-          <div id="brand">
-            <h1 ng-bind-html="'APP.LOG_IN_TO_MESSAGE' | translate"></h1>
-          </div><!--/#brand-->
-        </div><!--/.col-*-->
+<style type="text/css">
+    @CHARSET "UTF-8";
 
-        <div class="col-sm-7 col-md-6 col-lg-6 login">
-          <div class="alert alert-danger" ng-show="">
-            <span class="pficon pficon-error-circle-o"></span>
-            <p class="mc-text-red">{{ 'INVALID_USERNAME_OR_PASSWORD' | translate }}</p>
-          </div>
-          <form class="form-horizontal" name="mcLoginForm" role="form" ng-submit="login()">
-            <div class="form-group">
-              <label for="inputUsername" class="col-sm-2 col-md-2 control-label">{{ 'USERNAME' | translate }}</label>
-              <div class="col-sm-10 col-md-10">
-                <input type="text" class="form-control" name="username" id="username" ng-model="username" placeholder="{{ 'USERNAME' | translate }}" tabindex="1" required>
-              </div>
+    * {
+      -webkit-box-sizing: border-box;
+         -moz-box-sizing: border-box;
+              box-sizing: border-box;
+      outline: none;
+    }
+    body {
+      background: url(images/bg.jpg) no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+
+    .login-form {
+        font: 16px/2em Lato, serif;
+      margin: 20px auto;
+      max-width: 400px;
+    }
+
+    form[role=login] {
+      color: #5d5d5d;
+      background: #f2f2f2;
+      padding: 26px;
+      border-radius: 10px;
+      -moz-border-radius: 10px;
+      -webkit-border-radius: 10px;
+    }
+      form[role=login] img {
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 35px;
+      }
+      form[role=login] input,
+      form[role=login] button {
+        font-size: 18px;
+        margin: 16px 0;
+      }
+      form[role=login] > div {
+        text-align: center;
+      }
+      
+    .form-links {
+      text-align: center;
+      margin-top: 1em;
+      margin-bottom: 50px;
+    }
+      .form-links a {
+        color: #fff;
+      }
+    </style>
+
+
+    <section class="container">
+        <section class="login-form">
+          <form role="login" name="mcLoginForm" ng-submit="login()">
+            <div class="alert alert-danger" ng-show="">
+              <span class="pficon pficon-error-circle-o"></span>
+              <p class="mc-text-red">{{ 'INVALID_USERNAME_OR_PASSWORD' | translate }}</p>
             </div>
-            <div class="form-group">
-              <label for="inputPassword" class="col-sm-2 col-md-2 control-label">{{ 'PASSWORD' | translate }}</label>
-              <div class="col-sm-10 col-md-10">
-                <input type="password" class="form-control" name="password" id="password" ng-model="password" placeholder="{{ 'PASSWORD' | translate }}" tabindex="2" required>
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="col-xs-8 col-sm-offset-2 col-sm-6 col-md-offset-2 col-md-6">
-              </div>
-              <div class="col-xs-4 col-sm-4 col-md-4 submit">
-                <button type="submit" ng-disabled="mcLoginForm.$invalid || dataLoading" class="btn btn-primary btn-lg" tabindex="4">{{ 'LOG_IN' | translate }}</button>
-                <span ng-if="dataLoading" class="spinner spinner-inverse spinner-inline mc-align-center"></span>
-              </div>
-            </div>
+            <img src="images/RumpiLogo.png" class="img-responsive" alt="" />
+            <input type="text" name="email" name="username" id="username" ng-model="username" placeholder="{{ 'USERNAME' | translate }}"required class="form-control input-lg" />
+            <input type="password" name="password" name="password" id="password" ng-model="password" placeholder="{{ 'PASSWORD' | translate }}" required class="form-control input-lg" />
+            <button type="submit" name="go" ng-disabled="mcLoginForm.$invalid || dataLoading" class="btn btn-lg btn-primary btn-block">{{ 'LOG_IN' | translate }}</button>
           </form>
-        </div><!--/.col-*-->
-        <div class="col-sm-5 col-md-6 col-lg-6 details">
-          <p ng-bind-html="'APP.WELCOME_MESSAGE' | translate"></p>
-          <p>{{ 'VERSION' | translate }}: <strong>{{loginSettings.appVersion}}</strong></p>
-          <p ng-bind-html="loginSettings.loginMessage"></p>
-        </div><!--/.col-*-->
-      </div><!--/.row-->
-    </div><!--/.container-->
+        </section>
+    </section>
